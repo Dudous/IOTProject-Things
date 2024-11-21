@@ -1,25 +1,32 @@
+from datetime import datetime
 import serial
 import firebase_admin
-from firebase_admin import credentials, firestore
+from firebase_admin import credentials, db
 
 # Use a service account.
 cred = credentials.Certificate('./park-iot-firebase-config.json')
 
-app = firebase_admin.initialize_app(cred)
+app = firebase_admin.initialize_app(cred,{
+    'databaseURL' : 'https://park-iot-default-rtdb.firebaseio.com/'
+})
 
-db = firestore.client()
+cards = db.reference('cards')
 
-# data = {"name": "Los Angeles", "state": "CA", "country": "USA"}
-
-# db.collection("cities").document("LA").set(data)
+ser = serial.Serial('COM3', 9600)
+print('bora pai')
 
 while True:
-    ser = serial.Serial('COM4', 9600, timeout=1)
+    data = ser.readline().decode('utf-8').strip()
 
-    data = ser.readline()
+    if(data):
 
-    data = data.decode('utf-8')
+        cards.set({
+            'code': data,
+            'enter': str(datetime.now())
+        })
 
-    print(data)
+        print(data)
+        break
 
-    ser.close()
+
+print('ok')

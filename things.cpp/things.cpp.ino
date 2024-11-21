@@ -1,44 +1,37 @@
-#include <Arduino.h>
-
-
-//==== Inclusão de bibliotecas ====//
-#include <VirtualWire.h>
-
-
-void setup()
+#include <SPI.h>
+#include <MFRC522.h>
+ 
+#define SS_PIN 53
+#define RST_PIN 5
+MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
+ 
+void setup() 
 {
-    vw_set_tx_pin(5);
-    Serial.begin(9600);    // Debugging only
-    Serial.println("setup");
-
-    // Initialise the IO and ISR
-    vw_set_ptt_inverted(true); // Required for DR3100
-    vw_setup(500);   // Bits per sec
-
-    pinMode(13, OUTPUT);
+  Serial.begin(9600);   // Inicia a serial
+  SPI.begin();      // Inicia  SPI bus
+  mfrc522.PCD_Init();   // Inicia MFRC522
 }
-
-void loop()
+ 
+void loop() 
 {
-    byte x[1];
+  // Look for new cards
+  if ( ! mfrc522.PICC_IsNewCardPresent()) 
+  {
+    return;
+  }
+  // Select one of the cards
+  if ( ! mfrc522.PICC_ReadCardSerial()) 
+  {
+    return;
+  }
+  //Mostra UID na serial
+  String conteudo= "";
+  for (byte i = 0; i < mfrc522.uid.size; i++) 
+  {
+     conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+     conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
+  }
+  conteudo.toUpperCase();
 
-    x[0] = 0;
-
-    digitalWrite(13, HIGH);
-    
-    for(int i = 0;i <= 255; i+=5){
-        x[0] = i;
-        vw_send(x, 1);
-        vw_wait_tx();
-        Serial.println(i);
-    }
-
-    digitalWrite(13, LOW);
-
-    for(int i = 255;i >= 0; i-=5){
-        x[0] = i;
-        vw_send(x, 1);
-        vw_wait_tx();
-    }
-
-}//endLoop
+  Serial.println(conteudo.substring(1));
+} 
