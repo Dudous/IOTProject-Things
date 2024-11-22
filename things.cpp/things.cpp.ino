@@ -24,14 +24,18 @@ void loop()
   {
     return;
   }
+
+  String newConteudo = "";
+  
   //Mostra UID na serial
-  String conteudo= "";
   for (byte i = 0; i < mfrc522.uid.size; i++) 
   {
-     conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
-     conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
+     newConteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+     newConteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
-  conteudo.toUpperCase();
+  newConteudo.toUpperCase();
+  
+  Serial.println(newConteudo.substring(1));
 
-  Serial.println(conteudo.substring(1));
-} 
+  delay(2000);
+}

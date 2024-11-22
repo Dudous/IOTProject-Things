@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "park-iot",
+  "private_key_id": "39d8cb31016a2d9fba29783af130cd404c367dc9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCpZj3VQgG5E5tB\n4f3j2XIWhe8sOFjbUN4Gw5m9ElcNn/D6fFAdt+ABzxdroyhnOukww3nQrQ0wAfWb\nGtTYWl03bIHfv4WTVI6TeaVn7KBhj/q3+/23SjJkMuGlhmYCq/uXe/MycUevkXHG\nLPQV4zah6xa0XaBRdB4FThB/C0SNQeYzXr/IOZmdxcvTyEYatv5OcydibyQEA0nt\n81xV5k4PHpMlUz05AyHjCiwFrTS+8dn5UwXAcptNUzLNn67C4tsY2O5myBDg0K9P\nNXk9b/6UM6obL1qS6sGeFXJ/+I9kL4pY9HitNC7jHJ67YZ5EXOYT8gmpdJbCtyS+\nz6FJgu2VAgMBAAECggEAT9lt1BRlE4R2brvEHZ7l9E/1yXZWDCs2PSH+We1HM5js\n0mW+rgN6h9/CPm6OIPrX6LB7vy2TRcnmp9Ih+km+Ht366ikxIZ1+B24T1cToZJSl\nrgwOMFO9JRYG3ytW8nN3CJTYsjJLhCqe4rdV5utPWUujTCnF5B9D92QwynHZQmvE\nGgzHLqyCDg6hxDul97ySxxU/MzLAIJTBMQjXHL84Dgxg4kOlQ/A/I4tU6fKr/mc9\nn94P1RT3guOsFJ9ZabHB5DGSPnLkll5aNvkW7CaWZU8RcPeTHCo8QcVwca6R3BSq\n87SSYOCWGN9GTRaICXtmy7K3FcbfMXP+8UkALSE6kQKBgQDqAP2MyN5uPbNUdHcd\nL5/N+mztuI+Nd8zymO1Ps4rz8v4i3icq6n1b55gq/nyoiOsplt26o/H9rWZbre19\nL+KvE2pT6w+c2S01ORHEz12gHX3gpIsTsdjF2U8szlIogGRGt16tmxqECM/s+ZSK\ngJYLU1tw00h4gRD3h4aVQu1y+wKBgQC5UqAJgEUvusI3koTArHyRH1oz5GVpPYMh\nOF39NRUjcFGBjyonIIA+zrVju0BozONJd9/MsWU7E+H59athqba4UcaXKxiF/EcW\n3UOCzCppxJhctJYfRRDaWw1jkT1cSzGqYtcksLAItw1bGxgdRy3XnFhjh+1tgo8i\nuwxO5nO8rwKBgQDMHHMNc0S5qi4bU792gM0GsRKExMDKqB3n2kbdh4GDyoesSFSn\n1YPlP3z2u6Zmp49gZo0fuNNi7/Zhr7OAx90V03yimF209aa+TvpVzn8fI7ph0YTS\neAXahfPO5GS7mUpeeKIoEiut0bX0Qbs0mHbIiDwxjMog+oufLeLRnWBbMwKBgAcu\nuJ0lp4jOCDD3MMX26W0GdgyE0ZlelPJ4qMvjfso81CvdTJjvnYjRoh4XZ8uoBTcX\nukjIp0++2YdCij3iwf4qzTOWrAClYmv0b2VmXE51HCKbrSXRG3IbDU3Kl0I4d9hO\ntF/rqSbtUUsypaCc3Z35pUNWRVF1Oe7yqOt16w5pAoGAZuabwGIOvyBwwC9u6A54\nT35+hS33OQgZuqURdjr9LTFJ5lCIHfJR1LOI6Kk1aTCm6fpxjPlDmIPaoRIfzOaf\n4tvx+stYANTtaf6sD0PCMeoM4X2CJ+Lve9xcM1voQUiilbPgx+sQkGxJD8wt8J/G\nHOW/lyvwsPoeoCniK/tfx+I=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-8cvie@park-iot.iam.gserviceaccount.com",
+  "client_id": "108706440345461189929",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-8cvie%40park-iot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
