@@ -5,7 +5,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # Use a service account.
-cred = credentials.Certificate("C:/Users/DELL/Desktop/IOTProject-Things/park-iot-firebase-adminsdk-8cvie-d594c0b71c.json")
+cred = credentials.Certificate("./park-iot-firebase.json")
 
 app = firebase_admin.initialize_app(cred)
 
@@ -13,11 +13,25 @@ db = firestore.client()
 
 cards_ref = db.collection('cards')
 
+catraca_ref = db.collection('catraca')
+
 ser = serial.Serial('COM4', 9600)
 print('bora pai')
 
 while True:
+    catraca = catraca_ref.document('entrada').get().to_dict().get('state')
+
+    print(catraca)
+
+    if catraca:
+        ser.write(b'True')
+    else:
+        ser.write(b'False')
+
+    time.sleep(1)
+
     data = ser.readline().decode('utf-8').strip()
+    print('teste')
 
     if(data):
         print(data)
