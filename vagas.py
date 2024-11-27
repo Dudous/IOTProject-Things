@@ -14,7 +14,7 @@ db = firestore.client()
 vagas_ref = db.collection('vagas')
 
 # Configura a porta serial
-ser = serial.Serial('COM6', 9600)
+ser = serial.Serial('COM4', 9600)
 time.sleep(2)  # Tempo para inicializar a comunicação serial
 
 while True:
@@ -34,7 +34,7 @@ while True:
                 vagas_ref.document(vaga).update({'vaga': True})
                 print(f'Vaga desativada: {dist} cm')
 
-        time.sleep(0.5)  # Ajuste o tempo entre as leituras conforme necessário
+        time.sleep(1)  # Ajuste o tempo entre as leituras conforme necessário
 
     except Exception as e:
         print(f'Erro: {e}')

@@ -26,8 +26,6 @@ while True:
     data = ser.readline().decode('utf-8').strip()
 
     print(data)
-    
-    print(catraca)
 
     if catraca:
         ser.write(b'1')
