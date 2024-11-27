@@ -14,7 +14,7 @@ db = firestore.client()
 vagas_ref = db.collection('vagas')
 
 # Configura a porta serial
-ser = serial.Serial('COM3', 9600)
+ser = serial.Serial('COM6', 9600)
 time.sleep(2)  # Tempo para inicializar a comunicação serial
 
 while True:

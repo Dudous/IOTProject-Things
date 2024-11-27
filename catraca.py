@@ -17,7 +17,7 @@ catraca_ref = db.collection('catraca')
 
 users_ref = db.collection('users')
 
-ser = serial.Serial('COM6', 9600, timeout=1)
+ser = serial.Serial('COM4', 9600, timeout=1)
 print('bora pai')
 
 while True:
