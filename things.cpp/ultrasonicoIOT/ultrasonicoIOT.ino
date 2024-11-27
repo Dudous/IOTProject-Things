@@ -20,5 +20,5 @@ void loop() {
   
   Serial.println("{\"vaga1\": " + (String) distance + ", \"vaga2\": " + (String) distance2 + ", \"vaga3\": " + (String) distance3 + "}");
 
-  delay(500);
+  delay(1000);
 }
