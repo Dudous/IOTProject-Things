@@ -6,19 +6,31 @@ Servo servo;
  
 #define SS_PIN 53
 #define RST_PIN 5
+#define CLOSED 90
+#define OPEN 0
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
  
 void setup() 
 {
+  pinMode(3, OUTPUT);
   Serial.begin(9600);   // Inicia a serial
   SPI.begin();      // Inicia  SPI bus
   mfrc522.PCD_Init();   // Inicia MFRC522
   servo.attach(7);
+  servo.write(CLOSED);
 }
  
 void loop() 
 {
-  servo.write(0);
+  if (Serial.available() > 0) 
+  {
+    char inputChar = Serial.read();
+    if (inputChar == '1') 
+      servo.write(OPEN);
+    else
+      servo.write(CLOSED);
+  }
+
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
@@ -29,6 +41,10 @@ void loop()
   {
     return;
   }
+
+  digitalWrite(3, HIGH);
+  delay(100);
+  digitalWrite(3, LOW);
 
   String newConteudo = "";
   
@@ -42,7 +58,5 @@ void loop()
   
   Serial.println(newConteudo.substring(1));
 
-  servo.write(90);
-
-  delay(3000);
+  delay(2000);
 }

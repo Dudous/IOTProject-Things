@@ -2,7 +2,7 @@
 
 Ultrasonic ultrasonic(4, 5);
 Ultrasonic ultrasonic2(6, 7);
-Ultrasonic ultrasonic2(8, 9);
+Ultrasonic ultrasonic3(8, 9);
 int distance;
 int distance2;
 int distance3;
